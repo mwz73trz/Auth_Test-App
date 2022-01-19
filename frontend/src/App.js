@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
+import TeamDetailPage from "./pages/TeamDetailPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import UserContext from "./contexts/UserContext.js";
@@ -39,7 +40,6 @@ function App() {
     let data = await response.json();
     if (data.token) {
       localStorage.setItem("auth-user", `${data.token}`);
-      console.log(data.token);
       setIsLoggedIn(true);
       setUser(data.user);
     }
@@ -64,6 +64,7 @@ function App() {
                 <HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
               }
             />
+            <Route path="/teams/:teamID" element={<TeamDetailPage />} />
             <Route
               path="/login"
               element={
