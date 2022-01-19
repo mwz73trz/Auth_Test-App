@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'auth_test_app',
+    'team_app',
 ]
 
 MIDDLEWARE = [
