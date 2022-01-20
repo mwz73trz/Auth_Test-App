@@ -54,7 +54,7 @@ REST_FRAMEWORK = {
 }
 
 JWT_AUTH = {
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'auth_test_proj.utils.my_jwt_response_handler'
+     'JWT_RESPONSE_PAYLOAD_HANDLER': 'auth_test_proj.utils.my_jwt_response_handler'
 }
 
 CORS_ORIGIN_WHITELIST = ['https://localhost:3000','http://localhost:3000']
